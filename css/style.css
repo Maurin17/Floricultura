@@ -1,0 +1,40 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #F0EAD2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li, a {
+    font-size: 18px;
+    color: #ADC178;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #A98467;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.MenuLista {
+    list-style: none;
+}
+
+.MenuLista li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.MenuLista li a:hover {
+    color: #DDE5B6;
+}
