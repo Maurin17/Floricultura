@@ -1,15 +1,27 @@
+@charset "UTF-8";
+
+:root {
+    --color0: #A98467;
+    --color1: #6C584C;
+
+    --text-color:#ADC178;
+
+    --font0: Arial, Helvetica, sans-serif;
+}
+
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: #F0EAD2;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font0);
 }
 
 /* header*/
 li, a {
-    font-size: 25px;
-    color: #ADC178;
+    font-size: 20px;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -18,18 +30,21 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 15px;
-    background-color: #A98467;
+    background-color: var(--color0);
 }
 
- header img {
+header img {
+    position: absolute;
+    left: 20px;
+    top: 23px;
     width: 50px;
     height: 50px;
     padding: 10px;
     border-radius: 60px;
-    background-color: #6C584C;
+    background-color: var(--color1); 
 }
 
-.Menu {
+nav {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -41,31 +56,36 @@ header {
 
 .MenuLista li {
     display: inline-block;
+    margin: 0px 25px;
+}
+
+.MenuLista li a {
     padding: 10px 20px;
-    background-color: #6C584C;
-    border: none;
+    background-color: var(--color1);
     border-radius: 60px;
     cursor: pointer;
-    margin: 0px 25px;
 }
 
 .MenuLista li a:hover {
     color: #DDE5B6;
+    background-color: #69594d;
+    box-shadow: 0 0 10px #1f1f1f;
+
 }
 
 
 /* Quem somos*/
 
-.quemsomos {
+main {
     max-width: 900px;
     margin: 50px auto;
     padding: 20px 30px;
     background-color: #FFF;
     border-radius: 10px;
     box-shadow: 0 0 10px #ADC178;
-    }
+}
 
-.quemsomos h1 {
+main h1 {
     font-size: 36px;
     color: #A98467;
     margin-bottom: 20px;
@@ -74,14 +94,14 @@ header {
     padding-bottom: 10px;
 }
 
-.quemsomos p {
+main p {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 20px;
     text-align: justify;
 }
 
-.quemsomos em {
+main em {
     display: block;
     text-align: center;
     font-style: italic;
@@ -89,14 +109,3 @@ header {
     font-size: 18px;
     margin-top: 30px;
 }
-
-/*Home */
-
-.home {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px 30px;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ADC178;
-    }
