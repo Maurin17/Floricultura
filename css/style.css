@@ -76,36 +76,95 @@ nav {
 
 /* Quem somos*/
 
-main {
+ main .texto {
     max-width: 900px;
     margin: 50px auto;
     padding: 20px 30px;
     background-color: #FFF;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ADC178;
+    box-shadow: 0 0 10px #aaaa;
 }
 
-main h1 {
+main .texto h1 {
     font-size: 36px;
     color: #A98467;
     margin-bottom: 20px;
     text-align: center;
-    border-bottom: 2px solid #ADC178;
+    border-bottom: 2px solid #aaaa;
     padding-bottom: 10px;
 }
 
-main p {
+main .texto  p {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 20px;
     text-align: justify;
 }
 
-main em {
+main .texto em {
     display: block;
     text-align: center;
     font-style: italic;
     color: #6C584C;
     font-size: 18px;
     margin-top: 30px;
+}
+
+/* Catalogo */
+
+.catalogo {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-family: var(--font0);
+    margin-top: 50px;
+    gap: 16px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+     max-width: 1000px;
+}
+
+.flores {
+    flex: 0 1 calc(20% - 16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    width: 180px;
+    height: 260px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+    gap: 4px;
+}
+
+.flores h1 {
+    font-size: 1.2rem;
+}
+
+.flores h2 {
+    font-size: .9rem;
+    color: #aaaa;
+}
+
+.flores button {
+    background-color:var(--color1);
+    height: 30px;
+    border: none;
+    padding: 4px;
+    border-radius: 10px;
+    width: 80%;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.flores button:hover {
+    background-color: #A98467;
+    cursor: pointer;
+}
+
+.flores img {
+    width: 100px;
+    height: 100px;
 }
