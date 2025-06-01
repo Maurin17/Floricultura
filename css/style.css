@@ -1,111 +1,228 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 :root {
-    --color0: #A98467;
-    --color1: #6C584C;
+    --background-color: #FFFAF4;
+    --header-color: #FDF3EB;
+    --section-color1: #FBDFC1;
+    --section-color2: #E6A99A;
+    --text-color1: #E6A99A;
+    --text-color2: #FFEBDB;
+    --input-color: #FEF1D9;
+    --button-color: #E6A99A;
+    --image-color: #FFEBDB;
 
-    --text-color:#ADC178;
+    --hover-color:#E6A99A;
+    --hover-text-color: #ffffff;
+    --hover-button:#E6A99A;
+    --hover-button-text:#fdebfd;
 
-    --font0: Arial, Helvetica, sans-serif;
+    --font: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+body, nav, ul, li, a, h1, p {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+} 
 
 body {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #F0EAD2;
-    font-family: var(--font0);
+    background-color: var(--background-color);
+    font-family: var(--font);
 }
 
 /* header*/
-li, a {
-    font-size: 20px;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 15px;
-    background-color: var(--color0);
+    background-color: var(--header-color);
+    max-width: 100%;
+    height: 100px;
 }
 
-header img {
-    position: absolute;
-    left: 20px;
-    top: 23px;
+
+header #logo {
     width: 50px;
     height: 50px;
     padding: 10px;
+    margin-left: 15px;
     border-radius: 60px;
-    background-color: var(--color1); 
+    background-color: var(--image-color);
+}
+
+header #logo img {
+    width: 50px;
+    height: 50px; 
 }
 
 nav {
-    flex: 1;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin: 0px 15px;
+    height: 100%;
+}
+
+nav ul, nav li, nav a {
+    font-size: 20px;
+    color: var(--text-color1);
 }
 
 .MenuLista {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
+    height: 100%;
 }
 
 .MenuLista li {
     display: inline-block;
-    margin: 0px 25px;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+    
 }
 
 .MenuLista li a {
-    padding: 10px 20px;
-    background-color: var(--color1);
-    border-radius: 60px;
+    display: inline-block;
+    align-content: center;
+    height: 100%;
+    padding: 0px 20px;
     cursor: pointer;
 }
 
 .MenuLista li a:hover {
-    color: #DDE5B6;
-    background-color: #69594d;
-    box-shadow: 0 0 10px #1f1f1f;
-
+    color: var(--hover-text-color);
+    background-color: var(--hover-color);
+    cursor: pointer;
 }
 
+
+/* Banner */
+.banner {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    height: 400px;
+    background-color: var(--image-color);
+}
+
+.banner #titulo-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 40px;
+}
+
+.banner #titulo-banner h1 {
+    font-size: 50px;
+    color: var(--text-color1);
+}
+
+.banner #titulo-banner p {
+    color: var(--text-color1);
+}
+
+.menu-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.menu-options .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: var(--section-color1);
+    cursor: pointer;
+}
+
+.menu-options .option h1, .option p{
+    color: var(--text-color1);
+    text-align: center;
+    padding: 20px 20px 0px 20px
+}
+
+
+.menu-options .option:hover {
+    box-shadow: 2px 2px 5px #3535355d;
+}
+
+.menu-options .option img {
+    background-color: var(--image-color);
+    width: 100%;
+    height: 50%;
+}
+
+
+main #titulo h1{
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 50px;
+    color: var(--text-color1);
+}
 
 /* Quem somos*/
 
- main .texto {
-    max-width: 900px;
+.quemsomos {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
     margin: 50px auto;
+}
+
+.quemsomos img {
+    background-color: var(--image-color);
+}
+
+main .texto1 {
     padding: 20px 30px;
-    background-color: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #aaaa;
+    background-color: var(--section-color2);
+    border-radius: 5px;
 }
 
-main .texto h1 {
-    font-size: 36px;
-    color: #A98467;
-    margin-bottom: 20px;
-    text-align: center;
-    border-bottom: 2px solid #aaaa;
-    padding-bottom: 10px;
-}
-
-main .texto  p {
+main .texto1 p {
     font-size: 20px;
+    color: var(--text-color2);
     line-height: 1.5;
     margin-bottom: 20px;
     text-align: justify;
 }
 
-main .texto em {
+
+main .texto2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+main .texto2 p {
+    font-size: 20px;
+    color: var(--text-color1);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+main .texto2 em {
     display: block;
     text-align: center;
     font-style: italic;
-    color: #6C584C;
+    color: var(--text-color1);
     font-size: 18px;
     margin-top: 30px;
 }
@@ -114,27 +231,27 @@ main .texto em {
 
 .catalogo {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: start;
-    font-family: var(--font0);
-    margin-top: 50px;
+    font-family: var(--font);
     gap: 16px;
-    margin: 50px auto;
-    flex-wrap: wrap;
-     max-width: 1000px;
+    margin: 40px auto;
+    max-width: 1200px;
 }
 
 .flores {
-    flex: 0 1 calc(20% - 16px);
     display: flex;
+    flex: 1 0 calc(20% - 16px);
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background-color: #FFF;
-    width: 180px;
-    height: 260px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 12px #aaaa;
+    background-color: var(--section-color1);
+    min-width: 250px;
+    max-width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #aaaaaa52;
     gap: 4px;
 }
 
@@ -148,19 +265,19 @@ main .texto em {
 }
 
 .flores button {
-    background-color:var(--color1);
+    background-color: var(--text-color1);
     height: 30px;
     border: none;
     padding: 4px;
-    border-radius: 10px;
-    width: 80%;
+    border-radius: 5px;
+    width: 95%;
     color: #FFF;
     font-size: 1rem;
     font-weight: bold;
 }
 
 .flores button:hover {
-    background-color: #A98467;
+    background-color: var(--hover-color);
     cursor: pointer;
 }
 
