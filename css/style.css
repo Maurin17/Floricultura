@@ -285,3 +285,22 @@ main .texto2 em {
     width: 100px;
     height: 100px;
 }
+
+/* contato */
+
+header button {
+    background-color: var(--text-color1);
+    height: 30px;
+    border: none;
+    padding: 6px;
+    margin-left: 5px;
+    border-radius: 5px;
+    width: 100%;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+header button:hover {
+    cursor: pointer;
+}
