@@ -24,39 +24,40 @@
     </header>
 
     <main>
-
-        <form action="">
-        <div class="login">
+        <div id="titulo">
             <h1>Cadastre-se</h1>
-            <div class="input">
-                <label for="nome">Nome</label>
-                <input id="nome" type="text" placeholder="Digite seu nome" required>
-            </div>
-            <div class="input">
-                <label for="sobrenome">Sobrenome</label>
-                <input id="sobrenome" type="text" placeholder="Digite seu sobrenome" required>
-            </div>
-            <div class="input">
-                <label for="email">Email</label>
-                <input id="email" type="text" placeholder="Digite seu email" required>
-            </div>
-            <div class="input">
-                <label for="telefone">Telefone</label>
-                <input id="telefone" type="text" placeholder="Digite seu telefone" required>
-            </div>
-            <div class="input">
-                <label for="CEP">CEP</label>
-                <input id="CEP" type="text" placeholder="Digite seu CEP" required>
-            </div>
-            <div class="input">
-                <label for="senha">Senha</label>
-                <input id="senha" type="text" placeholder="Digite sua Senha" required>
-            </div>
-            <div class="botao">
-                <button>Enviar</button>
-            </div>
         </div>
-        </form>
+        <div class="login">
+            <form action="loginAction.html" method="GET">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" pattern=".{2,}" title="Necessário ter 2 ou mais caracteres" placeholder="Seu Nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="sobrenome" pattern=".{2,}" title="Necessário ter 2 ou mais caracteres" placeholder="Seu Sobrenome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Insira um email válido" placeholder="Seu Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" title="Insira um número de telefone válido" placeholder="(xx) xxxxx-xxxx" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Sua Senha" required>
+                </div>
+                <div class="input-group"><span>
+                        <input type="checkbox" name="aceitar-termos" id="aceitar-termos" class="aceitar-termos" required>
+                        <label for="aceitar-termos" class="label-aceitar-termos">Eu concordo com os <a href="#" class="term-service">termos de serviço</a></label>
+                </div></span>
+                <div class="input-group">
+                    <input type="submit" class="submit-button" value="Registrar">
+                </div>
+            </form>
+        </div>
 
     </main>
 </body>

@@ -159,7 +159,7 @@ nav ul, nav li, nav a {
     cursor: pointer;
 }
 
-.menu-options .option h1, .option p{
+.menu-options .option h1, .option p {
     color: var(--text-color1);
     text-align: center;
     padding: 20px 20px 0px 20px
@@ -177,7 +177,7 @@ nav ul, nav li, nav a {
 }
 
 
-main #titulo h1{
+main #titulo h1 {
     text-align: center;
     padding: 20px 40px;
     font-size: 50px;
@@ -322,9 +322,6 @@ header button:hover {
 }
 
 /*login */
-
-
-
 .login {
     margin: 50px auto;
     background-color: var(--image-color);
@@ -342,19 +339,25 @@ header button:hover {
     font-size: 40px;
 }
 
-.input {
+.input-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 
 }
 
-.input input {
+.input-group input {
     padding: 12px;
     border: none;
     border-radius: 6px;
 }
-.login button {
+
+.input-group label {
+    color: var(--text-color1);
+    padding-bottom: 2px;
+}
+
+.submit-button {
     margin-top: 20px;
     width: 100%;
     padding: 12px;
@@ -367,11 +370,26 @@ header button:hover {
     font-weight: bold;
 }
 
-.input label {
-    color: var(--text-color1);
-    padding-bottom: 2px;
+.submit-button:hover {
+    background-color: var(--hover-button);
 }
 
-.login button:hover {
-    background-color: var(--hover-button);
+
+.login-action {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.login-action th {
+    background-color: var(--text-color1);
+    border-radius: 5px;
+    color: var(--background-color);
+}
+
+.login-action td {
+    background-color: var(--background-color);
+    text-align: center;
+    border-radius: 5px;
+    color: var(--text-color1);
 }
