@@ -43,7 +43,7 @@
                 </div>
                 <div class="input-group">
                     <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" title="Insira um número de telefone válido" placeholder="(xx) xxxxx-xxxx" required>
+                    <input type="tel" name="telefone" id="telefone" onkeyup="formatTell(this)" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" title="Insira um número de telefone válido" placeholder="(xx) xxxxx-xxxx" required>
                 </div>
                 <div class="input-group">
                     <label for="senha">Senha</label>
@@ -60,6 +60,7 @@
         </div>
 
     </main>
+    <script src="js\formUtils.js"></script>
 </body>
 
 </html>

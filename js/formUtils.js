@@ -30,3 +30,12 @@ function showParametersHTML(params) {
 document.addEventListener("DOMContentLoaded", ()=> {
     showParametersHTML(getURLParameters());
 })
+
+ function formatTell(input) {
+
+  var telefone = input.value.replace(/\D/g, '');
+
+  telefone = telefone.replace(/(\d{2})(\d{4,5})(\d{4}).*/, '($1) $2-$3');
+
+  input.value = telefone;
+}
