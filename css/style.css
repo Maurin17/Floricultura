@@ -110,6 +110,23 @@ nav ul, nav li, nav a {
     cursor: pointer;
 }
 
+header button {
+    background-color: var(--text-color1);
+    height: 30px;
+    border: none;
+    padding: 6px;
+    margin-left: 5px;
+    border-radius: 5px;
+    width: 100%;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+header button:hover {
+    cursor: pointer;
+}
+
 
 /* Banner */
 .banner {
@@ -127,11 +144,12 @@ nav ul, nav li, nav a {
 }
 
 .banner #titulo-banner h1 {
-    font-size: 50px;
+    font-size: 3.2rem;
     color: var(--text-color1);
 }
 
 .banner #titulo-banner p {
+    font-size: 1.5rem;
     color: var(--text-color1);
 }
 
@@ -167,13 +185,14 @@ nav ul, nav li, nav a {
 
 
 .menu-options .option:hover {
-    box-shadow: 2px 2px 5px #3535355d;
+    box-shadow: 2px 2px 12px #aaaaaa52;
 }
 
 .menu-options .option img {
     background-color: var(--image-color);
     width: 100%;
     height: 50%;
+    border-radius: 5px 5px 0px 0px;
 }
 
 
@@ -253,7 +272,6 @@ main .texto2 em {
 
 .flores {
     display: flex;
-    flex: 1 0 calc(20% - 16px);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -267,12 +285,11 @@ main .texto2 em {
 }
 
 .flores h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
-.flores h2 {
-    font-size: .9rem;
-    color: #aaaa;
+.flores span {
+    font-size: 1.2rem;
 }
 
 .flores button {
@@ -281,9 +298,9 @@ main .texto2 em {
     border: none;
     padding: 4px;
     border-radius: 5px;
-    width: 95%;
+    width: 90%;
     color: #FFF;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
@@ -297,24 +314,113 @@ main .texto2 em {
     height: 100px;
 }
 
-/* contato */
+/* Modal */
 
-header button {
-    background-color: var(--text-color1);
-    height: 30px;
-    border: none;
-    padding: 6px;
-    margin-left: 5px;
-    border-radius: 5px;
-    width: 100%;
-    color: #FFF;
-    font-size: 1rem;
-    font-weight: bold;
+@keyframes modalOpenImageAnimation {
+    from {
+        background-size: 50%;
+    }
+    to {
+        background-size: 75%;
+    }
 }
 
-header button:hover {
+@keyframes modalOpenAnimation {
+    from {
+        width: 40rem;
+        height: 20rem;
+    }
+    to {
+        width: 50rem;
+        height: 30rem;
+    }
+}
+
+#knowMore {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    background-color: #00000080;
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50rem;
+    height: 30rem;
+    background-color: var(--section-color1);
+    border-radius: 5px;
+    animation-name: modalOpenAnimation;
+    animation-duration: 0.1s;
+}
+
+#modal-img {
+    background-color: var(--image-color);
+    width: 100%;
+    height: 100%;
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px 0px 0px 5px;
+
+    animation-name: modalOpenImageAnimation;
+    animation-duration: 0.5s;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.modal-info button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    background-color: var(--button-color);
+    color: var(--text-color2);
     cursor: pointer;
 }
+
+.modal-info button:hover{
+    background-color: var(--hover-button);
+    color: var(--hover-text-color);
+}
+
+#modal-titulo, #modal-descricao, #modal-preco {
+    text-align: center;
+    margin: 0;
+}
+
+#modal-titulo {
+    font-size: 3rem;
+}
+
+#modal-descricao {
+    font-size: 1.25em;
+}
+
+#modal-preco {
+    font-size: 2rem;
+}
+
+/* contato */
 
 .contato-img {
     background-image: url(../img/contatoimg.png);
