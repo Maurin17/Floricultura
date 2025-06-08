@@ -61,6 +61,28 @@ const products = [
     }
 ]
 
+function openModal(product) {
+    const modalContainer = document.getElementById("knowMore");
+    const modalButton = document.getElementById("modal-button")
+    const modalImage = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-titulo");
+    const modalDescription = document.getElementById("modal-descricao");
+    const modalValue = document.getElementById("modal-preco");
+
+    
+    modalButton.addEventListener("click", closeModal);
+    modalImage.style.backgroundImage = `url(${product.icon})`;
+    modalTitle.textContent = product.name;
+    modalDescription.textContent = product.description;
+    modalValue.textContent = product.value;
+    
+    modalContainer.style.display = "inline-block";
+}
+
+function closeModal() {
+    const modalContainer = document.getElementById("knowMore");
+    modalContainer.style.display = "none";
+}
 
 function ShowProductsHTML() {
     const container = document.querySelector(".catalogo");
@@ -90,27 +112,3 @@ function ShowProductsHTML() {
 }
 
 document.addEventListener("DOMContentLoaded", ShowProductsHTML);
-
-
-function openModal(product) {
-    let modalContainer = document.getElementById("knowMore");
-    let modalButton = document.getElementById("modal-button")
-    let modalImage = document.getElementById("modal-img");
-    let modalTitle = document.getElementById("modal-titulo");
-    let modalDescription = document.getElementById("modal-descricao");
-    let modalValue = document.getElementById("modal-preco");
-
-    
-    modalButton.addEventListener("click", closeModal);
-    modalImage.style.backgroundImage = `url(${product.icon})`;
-    modalTitle.textContent = product.name;
-    modalDescription.textContent = product.description;
-    modalValue.textContent = product.value;
-    
-    modalContainer.style.display = "inline-block";
-}
-
-function closeModal() {
-    let modalContainer = document.getElementById("knowMore");
-    modalContainer.style.display = "none";
-}

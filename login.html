@@ -43,11 +43,20 @@
                 </div>
                 <div class="input-group">
                     <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" onkeyup="formatTell(this)" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" title="Insira um número de telefone válido" placeholder="(xx) xxxxx-xxxx" required>
+                    <input type="tel" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$" title="Insira um número de telefone válido" placeholder="(xx) xxxxx-xxxx" required>
                 </div>
                 <div class="input-group">
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Sua Senha" required>
+                    <input type="password" name="senha" id="senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Insira uma senha válida" placeholder="Sua Senha" required>
+                    <div class="checklist-senha">
+                        <ul class="checklist">
+                            <li class="item-lista">8 caracteres</li>
+                            <li class="item-lista">Número</li>
+                            <li class="item-lista">Minuscula</li>
+                            <li class="item-lista">Maiuscula</li>
+                            <li class="item-lista">Caractere especial</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="input-group"><span>
                         <input type="checkbox" name="aceitar-termos" id="aceitar-termos" class="aceitar-termos" required>
