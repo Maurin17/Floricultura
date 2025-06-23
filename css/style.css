@@ -535,3 +535,13 @@ main .texto2 em {
     border-radius: 5px;
     color: var(--text-color1);
 }
+
+.input-group a{
+    text-align: center;
+    color: #0000CD;
+}
+
+.input-group a:hover{
+    text-align: center;
+    color: #FFF;
+}
