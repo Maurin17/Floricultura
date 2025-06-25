@@ -380,10 +380,9 @@ main .texto2 em {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
 }
 
-.modal-info button {
+#modal-close-button {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -398,13 +397,16 @@ main .texto2 em {
     cursor: pointer;
 }
 
-.modal-info button:hover{
+#modal-close-button:hover{
     background-color: var(--hover-button);
     color: var(--hover-text-color);
 }
 
+
+
 #modal-titulo, #modal-descricao, #modal-preco {
     text-align: center;
+    padding: 20px 50px;
     margin: 0;
 }
 
@@ -418,6 +420,24 @@ main .texto2 em {
 
 #modal-preco {
     font-size: 2rem;
+}
+
+#modal-addshop-button {
+    background-color: var(--button-color);
+    color: var(--text-color2);
+    border: none;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 90%;
+    align-self: center;
+}
+
+#modal-addshop-button:hover {
+    background-color: var(--hover-button);
+    color: var(--hover-text-color);
 }
 
 /* contato */

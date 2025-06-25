@@ -1,5 +1,12 @@
+<?php 
+    require 'models/modelos.php';
+
+    session_start();
+?>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +25,14 @@
             <h1>Catálogo</h1>
         </div>
         <div class="catalogo">
-            
+            <?php foreach (Flor::get_all() as $flor): ?>
+                <div class="flores">
+                    <img src="<?= $flor['imagem'] ?>" alt="<?= $flor['nome'] . "imagem"?>">
+                    <h1><?= $flor['nome'] ?></h1>
+                    <span> <?= "R$ " . $flor['valor']?> </span>
+                    <button onclick='openModal(<?= json_encode($flor); ?>)'>Saiba mais</button>
+                </div>
+            <?php endforeach; ?>
         </div>
     </main>
 
@@ -28,10 +42,11 @@
                 
             </div>
             <div class="modal-info">
-                <button id="modal-button" type="button">X</button>
+                <button id="modal-close-button" type="button">X</button>
                 <h1 id="modal-titulo"></h1>
                 <p id="modal-descricao"></p>
                 <h2 id="modal-preco"></h2>
+                <button id="modal-addshop-button" type="button">Adicionar ao carrinho</button>
             </div>
         </div>
     </div>
