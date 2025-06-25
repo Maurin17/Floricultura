@@ -6,7 +6,13 @@
             <li><a href="catalogo.php">Catalogo</a></li>
             <li><a href="sobre.php">Sobre</a></li>
             <li><a href="contato.php">Contato</a></li>
-            <a href="login.php"><button>Entrar</button></a>
+
+            <?php if (isset($_SESSION['usuario'])): ?>
+                <a href="logout.php"><button>Sair</button></a>
+            <?php else: ?>
+                <a href="login.php"><button>Entrar</button></a>
+            <?php endif; ?>
+
         </ul>
     </nav>
 </header>

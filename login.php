@@ -1,11 +1,39 @@
 <?php 
     session_start();
+    require "models\modelos.php";
 
     $a = isset($_GET['a']) ? $_GET['a'] : '';
+    
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($a === "registrar") {
+            $nome = $_POST["nome"];
+            $sobrenome = $_POST["sobrenome"];
+            $email = $_POST["email"];
+            $telefone = $_POST["telefone"];
+            $senha = $_POST["senha"];
+
+            Usuario::create($nome, $sobrenome, $email, $telefone, $senha);
+            header("Location: ?a=entrar");
+            exit;
+        } else {
+            $email = $_POST["email"];
+            $senha = md5($_POST["senha"]);
+
+            $user = Usuario::get(null, $email, $senha);
+            if ($user) {
+                $_SESSION["usuario"] = $user;
+                header("Location: index.php");
+                exit;
+            } else {
+                $erroLogin = "Email ou senha incorretos.";
+            }
+        }
+    } 
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +53,7 @@
             <h1>Cadastre-se</h1>
         </div>
         <div class="login">
-            <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
+            <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"])?>?a=registrar" method="POST">
                 <div class="input-group">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" pattern=".{2,}" title="Necessário ter 2 ou mais caracteres" placeholder="Seu Nome" required>
@@ -60,7 +88,7 @@
                         <label for="aceitar-termos" class="label-aceitar-termos">Eu concordo com os <a href="#" class="term-service">termos de serviço</a></label>
                 </div></span>
                 <div class="input-group">
-                    <input type="submit" class="submit-button" value="Registrar">
+                    <input type="submit" class="submit-button" value="registrar">
                 </div>
             </form>
             <a href="?a=entrar">Entrar</a>

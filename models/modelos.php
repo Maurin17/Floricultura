@@ -46,7 +46,7 @@
 
             $conn = connect();
             mysqli_query($conn, "INSERT INTO usuario (nome, sobrenome, email, telefone, senha) VALUES ('$nome', '$sobrenome', '$email', '$telefone', md5('$senha'))");
-
+            
             mysqli_close($conn);
         }
 
