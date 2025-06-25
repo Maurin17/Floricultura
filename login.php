@@ -10,25 +10,16 @@
 </head>
 
 <body>
-    <header>
-        <a id="logo" href="index.html"><img src="img/logo.svg" alt="tulipa"></a>
-        <nav>
-            <ul class="MenuLista">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="catalogo.html">Catalogo</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <a href="login.html"><button>Entrar</button></a>
-            </ul>
-        </nav>
-    </header>
+
+    <?php require "header.php"; ?>
 
     <main>
+    <?php if ($a === 'registrar'): ?>
         <div id="titulo">
             <h1>Cadastre-se</h1>
         </div>
         <div class="login">
-            <form action="loginAction.html" method="GET">
+            <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
                 <div class="input-group">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" pattern=".{2,}" title="Necessário ter 2 ou mais caracteres" placeholder="Seu Nome" required>
@@ -67,8 +58,29 @@
                 </div>
             </form>
         </div>
+    <?php else: ?>
+        <div id="titulo">
+            <h1>Entre</h1>
+        </div>
+        <div class="login">
+            <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" title="Insira um email válido" placeholder="Seu Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" title="Insira uma senha válida" placeholder="Sua Senha" required>
+                </div>
+                <div class="input-group">
+                    <input type="submit" class="submit-button" value="Entrar">
+                </div>
+            </form>
+            <a href="?a=registrar">Registrar</a>
+        </div>
 
     </main>
+    <?php endif; ?>
     <script src="js\formUtils.js"></script>
 </body>
 

@@ -10,18 +10,8 @@
 </head>
 
 <body>
-    <header>
-        <a id="logo" href="index.html"><img src="img/logo.svg" alt="tulipa"></a>
-        <nav>
-            <ul class="MenuLista">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="catalogo.html">Catalogo</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <a href="login.html"><button>Entrar</button></a>
-            </ul>
-        </nav>
-    </header>
+    
+    <?php require "header.php"; ?>
 
     <main>
         <section class="banner">
@@ -35,17 +25,17 @@
         </section>
 
         <section class="menu-options">
-            <a href="catalogo.html" class="option">
+            <a href="catalogo.php" class="option">
                 <img src="img\catalogo.svg" alt="image">
                 <h1>Catalogo</h1>
                 <p>Venha conhecer nossos produtos</p>
             </a>
-            <a href="sobre.html" class="option">
+            <a href="sobre.php" class="option">
                 <img src="img\sobre.svg" alt="image">
                 <h1>Sobre</h1>
                 <p>Descubra quem somos</p>
             </a>
-            <a href="contato.html" class="option">
+            <a href="contato.php" class="option">
                 <img src="img\contato.svg" alt="image">
                 <h1>Contato</h1>
                 <p>Fale com a gente</p>

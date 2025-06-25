@@ -9,18 +9,8 @@
 </head>
 
 <body>
-    <header>
-        <a id="logo" href="index.html"><img src="img/logo.svg" alt="tulipa"></a>
-        <nav>
-            <ul class="MenuLista">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="catalogo.html">Catalogo</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <a href="login.html"><button>Entrar</button></a>
-            </ul>
-        </nav>
-    </header>
+    
+    <?php require "header.php"; ?>
     
     <main>
         <div id="titulo">
