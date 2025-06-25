@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+
+    $a = isset($_GET['a']) ? $_GET['a'] : '';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -57,6 +63,7 @@
                     <input type="submit" class="submit-button" value="Registrar">
                 </div>
             </form>
+            <a href="?a=entrar">Entrar</a>
         </div>
     <?php else: ?>
         <div id="titulo">
