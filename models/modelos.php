@@ -1,5 +1,5 @@
 <?php 
-    require '../bd/conecta.php';
+    require __DIR__ . '/../bd/conecta.php';
 
     function connect() {
         $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
