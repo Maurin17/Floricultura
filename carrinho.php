@@ -1,7 +1,7 @@
-<?php ; 
-    require 'models/modelos.php';
-    session_start();
-    
+<?php
+require 'models/modelos.php';
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -16,29 +16,42 @@
 </head>
 
 <body>
-    
+
     <?php require "header.php"; ?>
 
     <main>
         <div class="carrinho">
-            <form action="" method="POST">
-                <div class="catalogo">
-                    <?php foreach (Carrinho::get_all($_SESSION['usuario']['id']) as $carrinho): ?>
-                        <?php $flor = Flor::get($carrinho['flor_id']) ?>
+            <?php foreach (Carrinho::get_all($_SESSION['usuario']['id']) as $carrinho): ?>
+                <?php $flor = Flor::get($carrinho['flor_id']) ?>
+                <div class="carrinho-flor">
+                    <div class="imagem-carrinho">
+                        <img src="<?= $flor['imagem'] ?>" alt="<?= $flor['nome'] . "imagem" ?>">
+                    </div>
+                    <div class="flor-info">
+                        <h1><?= $flor['nome'] ?></h1>
+                        <p><?= $flor['descricao'] ?></p>
 
-                        <div class="flores">
-                            <h1><?= $flor['nome'] ?></h1>
-                            <h1><?= $flor['valor'] ?></h1>
-                            <p><?= $flor['descricao'] ?></p>
-                            <h1><?= $carrinho['quantidade'] ?></h1>
-                        </div>
-                    <?php endforeach; ?>
+                    </div>
+                    <div class="flor-valor">
+                        <h1>QT: <?= $carrinho['quantidade'] ?></h1>
+                        <h1>R$: <?= $flor['valor']*$carrinho['quantidade'] ?></h1>
+                    </div>
+
+                    <div class="botao-deletar">
+                        <a href="deletarItem.php?id=<?= $carrinho['flor_id']?>"><button type="button">DELETAR</button></a>
+                    </div>
                 </div>
+                <?php endforeach; ?>
+
                 
-                <button type="submit" name="comprar" value="comprar">COMPRAR</button>
-                
-            </form>
+                <form action="" method="POST">
+                    <div class="botao-comprar">
+                        <button type="submit" name="comprar">COMPRAR</button>
+                    </div>
+                </form>
         </div>
     </main>
 
-<body>
+    <body>
+
+</html>

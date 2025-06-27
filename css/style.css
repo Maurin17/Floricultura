@@ -572,14 +572,80 @@ main .texto2 em {
 
 /*carrinho */
 
+.carrinho {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    width: 90%;
+    height: 90%;
+    margin:auto;
+    background-color: var(--section-color1);
+    border-radius: 10px;
+    margin-top: 40px;
+
+}
+
 .carrinho button {
     background-color: var(--text-color1);
-    height: 30px;
     border: none;
-    padding: 4px;
+    padding: 8px;
     border-radius: 5px;
-    width: 90%;
     color: #FFF;
     font-size: 1.2rem;
     font-weight: bold;
+
 }
+
+.carrinho-flor {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 0.5fr;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto 0px auto;
+    width: 90%;
+    
+}
+
+.imagem-carrinho {
+    width: 150px;
+    height: 150px;
+    background-color: var(--button-color);
+    margin-right: 10px;
+    border-radius: 10px;
+
+}
+
+.flor-info h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+.flor-info p {
+    font-size: 20px;
+
+}
+
+.flor-valor {
+    text-align: center;
+
+}
+
+.flor-valor span{
+    display: block;
+}
+
+.botao-comprar {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.botao-deletar {
+    
+    align-items: right;
+    margin-left: 25px;
+}
+
