@@ -127,6 +127,10 @@ header button:hover {
     cursor: pointer;
 }
 
+.nav-user {
+    margin: 10px;
+}
+
 
 /* Banner */
 .banner {
@@ -564,4 +568,18 @@ main .texto2 em {
 .input-group a:hover{
     text-align: center;
     color: #FFF;
+}
+
+/*carrinho */
+
+.carrinho button {
+    background-color: var(--text-color1);
+    height: 30px;
+    border: none;
+    padding: 4px;
+    border-radius: 5px;
+    width: 90%;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: bold;
 }

@@ -2,6 +2,23 @@
     require 'models/modelos.php';
 
     session_start();
+
+
+    if (isset($_GET["id"])) {
+
+        if (!isset($_SESSION['usuario'])){
+            header("Location: login.php");
+        }
+    
+        $get_id = $_SESSION['usuario'];
+
+        $flor_id = $_GET["id"];
+        $usuario_id = $get_id['id'];
+        Carrinho::add($usuario_id, $flor_id);
+        header("Location: catalogo.php");
+        exit;
+    }
+
 ?>
 
 
@@ -46,6 +63,7 @@
                 <h1 id="modal-titulo"></h1>
                 <p id="modal-descricao"></p>
                 <h2 id="modal-preco"></h2>
+
                 <button id="modal-addshop-button" type="button">Adicionar ao carrinho</button>
             </div>
         </div>

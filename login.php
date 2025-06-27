@@ -112,6 +112,7 @@
                 </div>
             </form>
             <a href="?a=registrar">Registrar</a>
+            
         </div>
 
     </main>
@@ -120,3 +121,4 @@
 </body>
 
 </html>
+

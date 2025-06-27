@@ -8,6 +8,7 @@
             <li><a href="contato.php">Contato</a></li>
 
             <?php if (isset($_SESSION['usuario'])): ?>
+                <a class="nav-user" href="carrinho.php"><button>Carrinho</button></a>
                 <a href="logout.php"><button>Sair</button></a>
             <?php else: ?>
                 <a href="login.php"><button>Entrar</button></a>

@@ -180,9 +180,9 @@
             mysqli_close($conn);
         }
 
-        public static function get_all() {
+        public static function get_all($usuario_id) {
             $conn = connect();
-            $request = mysqli_query($conn, "SELECT * FROM carrinho");
+            $request = mysqli_query($conn, "SELECT * FROM carrinho WHERE usuario_id='$usuario_id'");
             $carts = array();
             if ($request->num_rows > 0) {
                 $carts = $request->fetch_all(MYSQLI_ASSOC);
