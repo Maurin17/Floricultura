@@ -30,10 +30,9 @@ session_start();
                     <div class="flor-info">
                         <h1><?= $flor['nome'] ?></h1>
                         <p><?= $flor['descricao'] ?></p>
-
                     </div>
                     <div class="flor-valor">
-                        <h1>QT: <?= $carrinho['quantidade'] ?></h1>
+                        <p>QT: <?= $carrinho['quantidade'] ?></p>
                         <h1>R$: <?= $flor['valor']*$carrinho['quantidade'] ?></h1>
                     </div>
 

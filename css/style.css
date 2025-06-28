@@ -577,13 +577,12 @@ main .texto2 em {
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
+    gap: 20px;
     width: 90%;
-    height: 90%;
-    margin:auto;
+    padding: 20px;
+    margin: 40px auto;
     background-color: var(--section-color1);
     border-radius: 10px;
-    margin-top: 40px;
-
 }
 
 .carrinho button {
@@ -594,7 +593,6 @@ main .texto2 em {
     color: #FFF;
     font-size: 1.2rem;
     font-weight: bold;
-
 }
 
 .carrinho-flor {
@@ -603,9 +601,8 @@ main .texto2 em {
     gap: 20px;
     align-items: center;
     justify-content: space-between;
-    margin: 20px auto 0px auto;
+    margin: auto;
     width: 90%;
-    
 }
 
 .imagem-carrinho {
@@ -614,38 +611,26 @@ main .texto2 em {
     background-color: var(--button-color);
     margin-right: 10px;
     border-radius: 10px;
-
 }
 
 .flor-info h1 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
-
 }
 
-.flor-info p {
+.carrinho-flor p {
     font-size: 20px;
-
 }
 
 .flor-valor {
     text-align: center;
-
 }
 
-.flor-valor span{
-    display: block;
+.flor-valor h1{
+    font-size: 25px;
 }
 
 .botao-comprar {
-  text-align: center;
-  margin-top: 2rem;
+    text-align: center;
 }
-
-.botao-deletar {
-    
-    align-items: right;
-    margin-left: 25px;
-}
-
