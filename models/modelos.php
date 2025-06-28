@@ -52,7 +52,7 @@
 
         public static function get($id = null, $email = null, $senha = null) {
             $conn = connect();
-            $sql = "SELECT id, nome, sobrenome, email, telefone FROM usuario WHERE";
+            $sql = "SELECT id, nome, sobrenome, email, telefone, is_admin FROM usuario WHERE";
             $user = array();
 
             if ($id) {
@@ -75,7 +75,7 @@
 
         public static function get_all() {
             $conn = connect();
-            $request = mysqli_query($conn, "SELECT * FROM usuario");
+            $request = mysqli_query($conn, "SELECT id, nome, sobrenome, email, telefone, is_admin FROM usuario");
             $users = array();
             if ($request->num_rows > 0) {
                 $users = $request->fetch_all(MYSQLI_ASSOC);
@@ -115,22 +115,24 @@
             return false;
         }
 
-        public static function create($nome, $valor, $descricao, $imagem) {
+        public static function create($nome, $valor, $descricao, $imagem, $tipoImg) {
             $conn = connect();
             
-            mysqli_query($conn, "INSERT INTO flor (nome, valor, descricao, imagem) VALUES ('$nome', '$valor', '$descricao', '$imagem'");
+            mysqli_query($conn, "INSERT INTO flor (nome, valor, descricao, imagem, tipo_imagem) VALUES ('$nome', '$valor', '$descricao', '$imagem', '$tipoImg')");
+
 
             mysqli_close($conn);
         }
 
         public static function get($id) {
             $conn = connect();
-            $sql = "SELECT id, nome, valor, descricao, imagem FROM flor WHERE id='$id'";
+            $sql = "SELECT id, nome, valor, descricao, imagem, tipo_imagem FROM flor WHERE id='$id'";
             $flower = array();
 
             $request = mysqli_query($conn, $sql);
             if ($request->num_rows > 0) {
                 $flower = $request->fetch_assoc();
+                $flower['imagem'] = "data:" . $flower['tipo_imagem'] . ";base64," . base64_encode($flower['imagem']);
             }
             
             mysqli_close($conn);
@@ -143,7 +145,11 @@
             $request = mysqli_query($conn, "SELECT * FROM flor");
             $flowers = array();
             if ($request->num_rows > 0) {
-                $flowers = $request->fetch_all(MYSQLI_ASSOC);
+                while ($row = $request->fetch_assoc()) {
+                    $tipo = $row['tipo_imagem'];
+                    $row['imagem'] = "data:$tipo;base64," . base64_encode($row['imagem']);
+                    $flowers[] = $row;
+                }
             }
             mysqli_close($conn);
             return $flowers;

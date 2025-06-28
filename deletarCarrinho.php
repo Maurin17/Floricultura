@@ -5,10 +5,12 @@
 
     if (!isset($_SESSION['usuario'])){
         header("Location: login.php");
+        exit();
     }
 
-    if (!isset($_GET["id"])) {
+    if (!isset($_GET["id"]) && !is_numeric($_GET['id'])) {
         header("Location: carrinho.php");
+        exit();
     }
 
     $usuario_id = $_SESSION['usuario']['id'];

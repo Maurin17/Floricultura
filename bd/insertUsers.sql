@@ -1,3 +1,6 @@
+INSERT INTO floricultura.usuario (nome, sobrenome, email, telefone, senha, is_admin) VALUES
+    ('Admin', 'da Silva', 'admin@admin.admin', '(41) 95678-1234', md5('#Senha123'), TRUE);
+
 INSERT INTO floricultura.usuario (nome, sobrenome, email, telefone, senha) VALUES
     ('Ana', 'Silva', 'ana.silva@email.com', '(41) 99876-1234', md5('Ana@2024!')),
     ('Bruno', 'Oliveira', 'bruno.oliveira@email.com', '(41) 91234-5678', md5('Bruno#789')),

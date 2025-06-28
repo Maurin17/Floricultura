@@ -25,7 +25,7 @@ session_start();
                 <?php $flor = Flor::get($carrinho['flor_id']) ?>
                 <div class="carrinho-flor">
                     <div class="imagem-carrinho">
-                        <img src="<?= $flor['imagem'] ?>" alt="<?= $flor['nome'] . "imagem" ?>">
+                        <img src="<?= $flor['imagem'] ?>" alt="<?= $flor['nome'] ?> imagem">
                     </div>
                     <div class="flor-info">
                         <h1><?= $flor['nome'] ?></h1>
@@ -37,7 +37,7 @@ session_start();
                     </div>
 
                     <div class="botao-deletar">
-                        <a href="deletarItem.php?id=<?= $carrinho['flor_id']?>"><button type="button">DELETAR</button></a>
+                        <a href="deletarCarrinho.php?id=<?= $carrinho['flor_id']?>"><button type="button">DELETAR</button></a>
                     </div>
                 </div>
                 <?php endforeach; ?>

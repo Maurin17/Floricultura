@@ -4,7 +4,7 @@
     session_start();
 
 
-    if (isset($_GET["id"])) {
+    if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
 
         if (!isset($_SESSION['usuario'])){
             header("Location: login.php");
@@ -18,7 +18,7 @@
         header("Location: catalogo.php");
         exit;
     }
-
+    
 ?>
 
 
@@ -44,7 +44,7 @@
         <div class="catalogo">
             <?php foreach (Flor::get_all() as $flor): ?>
                 <div class="flores">
-                    <img src="<?= $flor['imagem'] ?>" alt="<?= $flor['nome'] . "imagem"?>">
+                    <img src="<?= $flor['imagem'] ?>">
                     <h1><?= $flor['nome'] ?></h1>
                     <span> <?= "R$ " . $flor['valor']?> </span>
                     <button onclick='openModal(<?= json_encode($flor); ?>)'>Saiba mais</button>

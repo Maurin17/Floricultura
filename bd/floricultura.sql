@@ -9,7 +9,8 @@ CREATE TABLE usuario (
     sobrenome VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     telefone VARCHAR(20) NOT NULL,
-    senha VARCHAR(32) NOT NULL
+    senha VARCHAR(32) NOT NULL,
+    is_admin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE flor (
@@ -17,7 +18,8 @@ CREATE TABLE flor (
     nome VARCHAR(50) NOT NULL,
     valor DECIMAL(10, 2) NOT NULL,
     descricao TEXT NOT NULL,
-    imagem MEDIUMBLOB NOT NULL
+    imagem MEDIUMBLOB DEFAULT NULL,
+    tipo_imagem VARCHAR(50)
 );
 
 CREATE TABLE carrinho (

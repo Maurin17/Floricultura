@@ -578,7 +578,7 @@ main .texto2 em {
     align-items: left;
     justify-content: space-between;
     gap: 20px;
-    width: 90%;
+    width: 80%;
     padding: 20px;
     margin: 40px auto;
     background-color: var(--section-color1);
@@ -595,9 +595,15 @@ main .texto2 em {
     font-weight: bold;
 }
 
+.carrinho button:hover {
+    cursor: pointer;
+    color: var(--hover-button-text);
+    background-color: var(--hover-button);
+}
+
 .carrinho-flor {
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr 0.5fr;
+    grid-template-columns: auto 3fr 2fr 0.5fr;
     gap: 20px;
     align-items: center;
     justify-content: space-between;
@@ -608,9 +614,14 @@ main .texto2 em {
 .imagem-carrinho {
     width: 150px;
     height: 150px;
-    background-color: var(--button-color);
-    margin-right: 10px;
+    background-color: var(--image-color);
     border-radius: 10px;
+}
+
+.imagem-carrinho img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 
 .flor-info h1 {
@@ -633,4 +644,43 @@ main .texto2 em {
 
 .botao-comprar {
     text-align: center;
+}
+
+/* admin */
+
+.admin-painel-flor {
+    display: grid;
+    grid-template-columns: auto 2fr 0.5fr 0.5fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.admin-painel-flor img {
+    width: 150px;
+    height: 150px;
+    background-color: var(--image-color);
+}
+
+.admin-painel-flor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.admin-painel-flor-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.admin-painel-flor button {
+    width: 90%;
+}
+
+
+
+.admin-painel-adicionar {
+    margin: auto;
 }
