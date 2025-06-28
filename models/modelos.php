@@ -61,7 +61,7 @@
                 $sql .= " email = '$email' AND senha = '$senha'";
             } else {
                 mysqli_close($conn);
-                return "";
+                return $user;
             }
 
             $request = mysqli_query($conn, $sql);
@@ -155,10 +155,14 @@
             return $flowers;
         }
 
-        public static function update($id, $nome, $valor, $descricao, $imagem) {
+        public static function update($id, $nome, $valor, $descricao, $imagem=null, $tipo=null) {
             $conn = connect();
             if (Flor::exists($id)) {
-                mysqli_query($conn, "UPDATE flor SET nome = '$nome', valor = '$valor', descricao = '$descricao', imagem = '$imagem' WHERE id = '$id'");
+                if ($imagem) {
+                    mysqli_query($conn, "UPDATE flor SET nome = '$nome', valor = '$valor', descricao = '$descricao', imagem = '$imagem', tipo_imagem = '$tipo' WHERE id = '$id'");
+                } else {
+                    mysqli_query($conn, "UPDATE flor SET nome = '$nome', valor = '$valor', descricao = '$descricao' WHERE id = '$id'");
+                }
             }
 
             mysqli_close($conn);
@@ -166,7 +170,8 @@
 
         public static function delete($id) {
             $conn = connect();
-            mysqli_query($conn, "DELETE FROM flor WHERE id='$id'");
+            mysqli_query($conn, "DELETE FROM carrinho WHERE flor_id = '$id'");
+            mysqli_query($conn, "DELETE FROM flor WHERE id = '$id'");
             mysqli_close($conn);
         }
     }
@@ -196,7 +201,6 @@
             mysqli_close($conn);
             return $carts;
         }
-
 
         public static function delete_item($usuario_id, $flor_id) {
             $conn = connect();

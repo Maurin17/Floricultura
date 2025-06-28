@@ -17,7 +17,7 @@ CREATE TABLE flor (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     valor DECIMAL(10, 2) NOT NULL,
-    descricao TEXT NOT NULL,
+    descricao VARCHAR(254) NOT NULL,
     imagem MEDIUMBLOB DEFAULT NULL,
     tipo_imagem VARCHAR(50)
 );

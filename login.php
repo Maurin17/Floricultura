@@ -3,7 +3,7 @@
     require "models\modelos.php";
 
     $a = isset($_GET['a']) ? $_GET['a'] : '';
-    
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($a === "registrar") {
             $nome = $_POST["nome"];
@@ -14,7 +14,7 @@
 
             Usuario::create($nome, $sobrenome, $email, $telefone, $senha);
             header("Location: ?a=entrar");
-            exit;
+            exit();
         } else {
             $email = $_POST["email"];
             $senha = md5($_POST["senha"]);
@@ -23,13 +23,12 @@
             if ($user) {
                 $_SESSION["usuario"] = $user;
                 header("Location: index.php");
-                exit;
+                exit();
             } else {
                 $erroLogin = "Email ou senha incorretos.";
             }
         }
-    } 
-
+    }
 ?>
 
 <!DOCTYPE html>
@@ -112,9 +111,7 @@
                 </div>
             </form>
             <a href="?a=registrar">Registrar</a>
-            
         </div>
-
     </main>
     <?php endif; ?>
     <script src="js\formUtils.js"></script>

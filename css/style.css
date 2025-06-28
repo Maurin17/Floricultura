@@ -12,23 +12,30 @@
     --input-color: #FEF1D9;
     --button-color: #E6A99A;
     --image-color: #FFEBDB;
-    --hover-color:#E6A99A;
+    --hover-color: #E6A99A;
     --hover-text-color: #ffffff;
-    --hover-button:#ffc4b7;
-    --hover-button-text:#fdebfd;
+    --hover-button: #ffc4b7;
+    --hover-button-text: #fdebfd;
 
     --font: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
 }
 
-body, nav, ul, li, a, h1, p {
+body,
+nav,
+ul,
+li,
+a,
+h1,
+p {
     margin: 0;
     padding: 0;
     text-decoration: none;
-} 
+}
 
 body {
     box-sizing: border-box;
@@ -52,13 +59,13 @@ header #logo {
     height: 50px;
     padding: 10px;
     margin-left: 15px;
-    border-radius: 60px;
+    border-radius: 50px;
     background-color: var(--image-color);
 }
 
 header #logo img {
     width: 50px;
-    height: 50px; 
+    height: 50px;
 }
 
 nav {
@@ -68,7 +75,9 @@ nav {
     height: 100%;
 }
 
-nav ul, nav li, nav a {
+nav ul,
+nav li,
+nav a {
     font-size: 20px;
     color: var(--text-color1);
 }
@@ -93,7 +102,7 @@ nav ul, nav li, nav a {
     align-content: center;
     text-align: center;
     height: 100%;
-    
+
 }
 
 .MenuLista li a {
@@ -136,7 +145,7 @@ header button:hover {
 .banner {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    height: 400px;
+    min-height: 400px;
     background-color: var(--image-color);
 }
 
@@ -181,7 +190,8 @@ header button:hover {
     cursor: pointer;
 }
 
-.menu-options .option h1, .option p {
+.menu-options .option h1,
+.option p {
     color: var(--text-color1);
     text-align: center;
     padding: 20px 20px 0px 20px
@@ -220,6 +230,7 @@ main #titulo h1 {
 .sobre-img {
     background-image: url(../img/sobreimg.jpg);
     background-position: center;
+    border-radius: 5px;
 }
 
 main .texto1 {
@@ -324,6 +335,7 @@ main .texto2 em {
     from {
         background-size: 50%;
     }
+
     to {
         background-size: 75%;
     }
@@ -334,6 +346,7 @@ main .texto2 em {
         width: 40rem;
         height: 20rem;
     }
+
     to {
         width: 50rem;
         height: 30rem;
@@ -401,14 +414,16 @@ main .texto2 em {
     cursor: pointer;
 }
 
-#modal-close-button:hover{
+#modal-close-button:hover {
     background-color: var(--hover-button);
     color: var(--hover-text-color);
 }
 
 
 
-#modal-titulo, #modal-descricao, #modal-preco {
+#modal-titulo,
+#modal-descricao,
+#modal-preco {
     text-align: center;
     padding: 20px 50px;
     margin: 0;
@@ -449,6 +464,7 @@ main .texto2 em {
 .contato-img {
     background-image: url(../img/contatoimg.png);
     background-position: center;
+    border-radius: 5px;
 }
 
 /*login */
@@ -456,7 +472,7 @@ main .texto2 em {
     margin: 50px auto;
     background-color: var(--image-color);
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 2px 2px 5px #aaaaaa52;
     width: 100%;
     max-width: 400px;
@@ -480,7 +496,7 @@ main .texto2 em {
     padding: 12px;
     border: none;
     outline: none;
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 .input-group label {
@@ -517,7 +533,8 @@ main .texto2 em {
     color: #74bd74;
 }
 
-#senha:focus ~ .checklist-senha { /**/
+#senha:focus~.checklist-senha {
+    /**/
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
@@ -529,7 +546,7 @@ main .texto2 em {
     padding: 12px;
     background-color: var(--button-color);
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -560,12 +577,12 @@ main .texto2 em {
     color: var(--text-color1);
 }
 
-.input-group a{
+.input-group a {
     text-align: center;
     color: #0000CD;
 }
 
-.input-group a:hover{
+.input-group a:hover {
     text-align: center;
     color: #FFF;
 }
@@ -615,7 +632,7 @@ main .texto2 em {
     width: 150px;
     height: 150px;
     background-color: var(--image-color);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .imagem-carrinho img {
@@ -638,7 +655,7 @@ main .texto2 em {
     text-align: center;
 }
 
-.flor-valor h1{
+.flor-valor h1 {
     font-size: 25px;
 }
 
@@ -659,6 +676,7 @@ main .texto2 em {
     width: 150px;
     height: 150px;
     background-color: var(--image-color);
+    border-radius: 5px;
 }
 
 .admin-painel-flor-header {
@@ -679,8 +697,34 @@ main .texto2 em {
     width: 90%;
 }
 
-
-
 .admin-painel-adicionar {
     margin: auto;
+}
+
+/* admin flor formulario */
+
+.flor-form {
+    margin: 50px auto;
+    background-color: var(--image-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #aaaaaa52;
+    width: 100%;
+    max-width: 400px;
+}
+
+.flor-form img {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.flor-form textarea {
+    width: 94%;
+    height: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem;
 }

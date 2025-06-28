@@ -16,7 +16,7 @@
         $usuario_id = $get_id['id'];
         Carrinho::add($usuario_id, $flor_id);
         header("Location: catalogo.php");
-        exit;
+        exit();
     }
     
 ?>

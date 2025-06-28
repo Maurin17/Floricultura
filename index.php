@@ -1,6 +1,6 @@
-<?php ; 
+<?php
 
-    session_start();
+session_start();
 
 ?>
 
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    
+
     <?php require "header.php"; ?>
 
     <main>
@@ -26,7 +26,7 @@
                 <p>Flores que traduzem sentimentos e tornam momentos inesquecíveis.</p>
             </div>
             <div class="static-img banner-img">
-                
+
             </div>
         </section>
 
