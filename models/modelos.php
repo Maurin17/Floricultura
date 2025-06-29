@@ -96,6 +96,7 @@
 
         public static function delete($id) {
             $conn = connect();
+            mysqli_query($conn, "DELETE FROM carrinho WHERE usuario_id='$id'");
             mysqli_query($conn, "DELETE FROM usuario WHERE id='$id'");
             mysqli_close($conn);
         }

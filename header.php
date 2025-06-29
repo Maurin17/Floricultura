@@ -12,7 +12,7 @@
                     <a class="nav-user" href="admin.php"><button>Painel</button></a>
                 <?php endif; ?>
                 <a class="nav-user" href="carrinho.php"><button>Carrinho</button></a>
-                <a class="nav-user" href="logout.php"><button>Sair</button></a>
+                <a class="nav-user" href="perfil.php"><button>Conta</button></a>
             <?php else: ?>
                 <a href="login.php"><button>Entrar</button></a>
             <?php endif; ?>

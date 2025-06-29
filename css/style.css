@@ -489,7 +489,6 @@ main .texto2 em {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-
 }
 
 .input-group input {
@@ -502,6 +501,16 @@ main .texto2 em {
 .input-group label {
     color: var(--text-color1);
     padding-bottom: 2px;
+}
+
+.input-group a {
+    text-align: center;
+    color: #0000CD;
+}
+
+.input-group a:hover {
+    text-align: center;
+    color: #FFF;
 }
 
 .checklist-senha {
@@ -541,7 +550,6 @@ main .texto2 em {
 }
 
 .submit-button {
-    margin-top: 20px;
     width: 100%;
     padding: 12px;
     background-color: var(--button-color);
@@ -575,16 +583,6 @@ main .texto2 em {
     text-align: center;
     border-radius: 5px;
     color: var(--text-color1);
-}
-
-.input-group a {
-    text-align: center;
-    color: #0000CD;
-}
-
-.input-group a:hover {
-    text-align: center;
-    color: #FFF;
 }
 
 /*carrinho */
@@ -663,6 +661,11 @@ main .texto2 em {
     text-align: center;
 }
 
+.carrinho-vazio {
+    margin: auto;
+    text-align: center;
+}
+
 /* admin */
 
 .admin-painel-flor {
@@ -706,7 +709,7 @@ main .texto2 em {
 .flor-form {
     margin: 50px auto;
     background-color: var(--image-color);
-    padding: 40px;
+    padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px #aaaaaa52;
     width: 100%;
