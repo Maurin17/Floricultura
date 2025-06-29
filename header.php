@@ -6,7 +6,6 @@
             <li><a href="catalogo.php">Catalogo</a></li>
             <li><a href="sobre.php">Sobre</a></li>
             <li><a href="contato.php">Contato</a></li>
-
             <?php if (isset($_SESSION['usuario'])): ?>
                 <?php if ($_SESSION['usuario']['is_admin']): ?>
                     <a class="nav-user" href="admin.php"><button>Painel</button></a>
@@ -16,7 +15,6 @@
             <?php else: ?>
                 <a href="login.php"><button>Entrar</button></a>
             <?php endif; ?>
-
         </ul>
     </nav>
 </header>

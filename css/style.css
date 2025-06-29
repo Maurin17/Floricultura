@@ -450,7 +450,7 @@ main .texto2 em {
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
-    width: 90%;
+    width: 100%;
     align-self: center;
 }
 

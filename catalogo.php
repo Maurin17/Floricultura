@@ -1,26 +1,19 @@
 <?php
 require 'models/modelos.php';
-
 session_start();
 
-
-if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_SESSION['usuario'])) {
         header("Location: login.php");
     }
 
-    $get_id = $_SESSION['usuario'];
-
-    $flor_id = $_GET["id"];
-    $usuario_id = $get_id['id'];
+    $flor_id = $_POST["id"];
+    $usuario_id = $_SESSION['usuario']['id'];
     Carrinho::add($usuario_id, $flor_id);
     header("Location: catalogo.php");
     exit();
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,8 +56,10 @@ if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
                 <h1 id="modal-titulo"></h1>
                 <p id="modal-descricao"></p>
                 <h2 id="modal-preco"></h2>
-
-                <button id="modal-addshop-button" type="button">Adicionar ao carrinho</button>
+                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+                    <input id="flor-id" type="hidden" name="id">
+                    <button id="modal-addshop-button" type="submit">Adicionar ao carrinho</button>
+                </form>
             </div>
         </div>
     </div>

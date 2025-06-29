@@ -9,7 +9,6 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     $nome = $_POST['nome'];
@@ -48,6 +47,7 @@ $flor = Flor::get($_GET['id']);
 </head>
 
 <body>
+    
     <?php require "header.php" ?>
 
     <main>

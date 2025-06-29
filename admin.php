@@ -9,11 +9,17 @@ if (!isset($_SESSION['usuario'])) {
     header('location: index.php');
     exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    Flor::delete($_POST['id']);
+    header('location: admin.php');
+    exit();
+}
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -24,6 +30,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+
     <?php require "header.php" ?>
 
     <main>
@@ -44,7 +51,7 @@ if (!isset($_SESSION['usuario'])) {
                         <input type="hidden" name="id" value="<?= $flor['id'] ?>">
                         <button type="submit">Editar</button>
                     </form>
-                    <form action="deletarCatalogo.php" method="GET" onsubmit="return confirm('Tem certeza que deseja excluir o item <?= $flor['nome'] ?>?')">
+                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir o item <?= $flor['nome'] ?>?')">
                         <input type="hidden" name="id" value="<?= $flor['id'] ?>">
                         <button type="submit">Delete</button>
                     </form>

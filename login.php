@@ -1,6 +1,6 @@
 <?php
-session_start();
 require "models\modelos.php";
+session_start();
 
 $a = isset($_GET['a']) ? $_GET['a'] : '';
 
