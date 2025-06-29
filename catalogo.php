@@ -1,24 +1,24 @@
-<?php 
-    require 'models/modelos.php';
+<?php
+require 'models/modelos.php';
 
-    session_start();
+session_start();
 
 
-    if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
+if (isset($_GET["id"]) && is_numeric($_GET['id'])) {
 
-        if (!isset($_SESSION['usuario'])){
-            header("Location: login.php");
-        }
-    
-        $get_id = $_SESSION['usuario'];
-
-        $flor_id = $_GET["id"];
-        $usuario_id = $get_id['id'];
-        Carrinho::add($usuario_id, $flor_id);
-        header("Location: catalogo.php");
-        exit();
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: login.php");
     }
-    
+
+    $get_id = $_SESSION['usuario'];
+
+    $flor_id = $_GET["id"];
+    $usuario_id = $get_id['id'];
+    Carrinho::add($usuario_id, $flor_id);
+    header("Location: catalogo.php");
+    exit();
+}
+
 ?>
 
 
@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    
+
     <?php require "header.php"; ?>
 
     <main>
@@ -46,7 +46,7 @@
                 <div class="flores">
                     <img src="<?= $flor['imagem'] ?>">
                     <h1><?= $flor['nome'] ?></h1>
-                    <span> <?= "R$ " . $flor['valor']?> </span>
+                    <span> <?= "R$ " . $flor['valor'] ?> </span>
                     <button onclick='openModal(<?= json_encode($flor); ?>)'>Saiba mais</button>
                 </div>
             <?php endforeach; ?>
@@ -56,7 +56,7 @@
     <div id="knowMore">
         <div class="modal">
             <div id="modal-img">
-                
+
             </div>
             <div class="modal-info">
                 <button id="modal-close-button" type="button">X</button>
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="js/shopUtils.js"></script>
 </body>
 

@@ -5,7 +5,7 @@ function openModal(product) {
     const modalDescription = document.getElementById("modal-descricao");
     const modalValue = document.getElementById("modal-preco");
     const modalBuy = document.getElementById("modal-addshop-button");
-    
+
     modalImage.style.backgroundImage = `url(${product.imagem})`;
     modalTitle.textContent = product.nome;
     modalDescription.textContent = product.descricao;

@@ -15,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $valor = $_POST['valor'];
     $descricao = $_POST['descricao'];
-    
+
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
         $imagem = addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
         $tipo = $_FILES['imagem']['type'];
-        
+
         Flor::update($id, $nome, $valor, $descricao, $imagem, $tipo);
     } else {
         Flor::update($id, $nome, $valor, $descricao);
@@ -37,7 +37,7 @@ $flor = Flor::get($_GET['id']);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -60,7 +60,7 @@ $flor = Flor::get($_GET['id']);
                 <div class="input-group">
                     <img src="<?= $flor['imagem'] ?>" alt="">
                     <label for="imagem">Selecione uma Imagem</label>
-                    <input type="file" id="imagem" name="imagem"/>
+                    <input type="file" id="imagem" name="imagem" />
                 </div>
                 <div class="input-group">
                     <label for="nome">Nome</label>

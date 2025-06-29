@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="input-group">
                     <label for="imagem">Selecione uma Imagem</label>
-                    <input type="file" id="imagem" name="imagem" required/>
+                    <input type="file" id="imagem" name="imagem" required />
                 </div>
                 <div class="input-group">
                     <input type="submit" class="submit-button" value="Adicionar">

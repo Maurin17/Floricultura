@@ -1,6 +1,6 @@
-<?php ; 
+<?php
 
-    session_start();
+session_start();
 
 ?>
 
@@ -32,7 +32,7 @@
                 </p>
             </div>
             <div class="static-img contato-img">
-                
+
             </div>
             <div class="texto2">
                 <p>

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneInput = document.getElementById("telefone");
     const passwordInput = document.getElementById("senha");
     const checklistItens = document.querySelectorAll(".item-lista");
-    
+
     phoneInput.addEventListener("keyup", validatePhoneNumber);
-    passwordInput.addEventListener("keyup", () => {validatePassword(passwordInput, checklistItens)});
+    passwordInput.addEventListener("keyup", () => { validatePassword(passwordInput, checklistItens) });
 })

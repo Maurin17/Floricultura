@@ -12,7 +12,7 @@ function showParametersHTML(params) {
             const row = document.createElement('tr');
             const keyCell = document.createElement('td');
             const valueCell = document.createElement('td');
-            
+
             keyCell.textContent = key;
             valueCell.textContent = value;
 
@@ -25,6 +25,6 @@ function showParametersHTML(params) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", ()=> {
+document.addEventListener("DOMContentLoaded", () => {
     showParametersHTML(getURLParameters());
 })
