@@ -25,7 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: index.php");
             exit();
         } else {
-            $erroLogin = "Email ou senha incorretos.";
+            echo "<script type='text/javascript'>
+                alert('Email ou senha incorretos.');
+            </script>";
         }
     }
 }
@@ -114,6 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
     </main>
 <?php endif; ?>
+
+
 <script src="js\formUtils.js"></script>
 </body>
 
